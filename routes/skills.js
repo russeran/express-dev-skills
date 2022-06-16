@@ -9,10 +9,13 @@ var skillsCtrl = require("../controllers/skills")
 
 // INDEX ROUTE
 router.get("/", skillsCtrl.index);
-
-// GET SKILL
-
+// New Skill route
+router.get("/new", skillsCtrl.new)
+    // GET SKILL
 router.get("/:id", skillsCtrl.show)
-
+    // post skill route
+router.post("/", skillsCtrl.create)
+    // delete skill route
+router.delete('/:id', skillsCtrl.delete)
 
 module.exports = router;
