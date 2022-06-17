@@ -1,9 +1,9 @@
 var express = require('express');
 var router = express.Router();
 
-// Require the controller that exports To-Do CRUD functions
+// Require the controller that exports Skill CRUD functions
 var skillsCtrl = require("../controllers/skills")
-
+const app = require('../server')
 
 // All actual paths start with "/skills"
 
@@ -17,5 +17,10 @@ router.get("/:id", skillsCtrl.show)
 router.post("/", skillsCtrl.create)
     // delete skill route
 router.delete('/:id', skillsCtrl.delete)
+    //   edit route
+router.get('/:id/edit', skillsCtrl.edit)
+    // updated route
+router.put('/:id', skillsCtrl.update)
+
 
 module.exports = router;

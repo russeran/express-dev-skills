@@ -22,10 +22,10 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(methodOverride('_method'))
 
 app.use(function(req, res, next) {
-    res.locals.time = new Date().toLocaleTimeString()
-    next()
-})
-
+        res.locals.time = new Date().toLocaleTimeString()
+        next()
+    })
+    // Mounts router middleware
 app.use('/', indexRouter);
 app.use('/skills', skillsRouter);
 
